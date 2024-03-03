@@ -1,0 +1,8 @@
+.DL_store
+.idea/
+.idea/*
+.vscode
+*.sublime*
+build/
+node_modules/
+npm-debug.*
