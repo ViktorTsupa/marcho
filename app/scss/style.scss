@@ -1,4 +1,23 @@
 @import "vars";
 @import "mixin";
-@import "fonts";
 @import "reset";
+@import "./blocks/header";
+
+body {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: $default-grey;
+  line-height: 26px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.logo {
+  &__img {
+  }
+}
