@@ -3,11 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Marcho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-r, voluptatum recusandae necessitatibus accusamus! Perspiciatis sit exercitationem reprehenderit nulla vel provident, non soluta pariatur nostrum nam dolore quo possimus commodi nemo minima?
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a class="logo" href="#">
+          <img 
+            class="logo__img" 
+            src="img/logo.png" 
+            alt="Marcho logo"
+          >
+        </a>
+        <nav class="header__menu">
+          <ul class="header__list">
+            <li class="header__item">
+              <a class="header__link header__link--active" href="#">HOME</a>
+            </li>
+            <li class="header__item">
+              <a class="header__link" href="#">SHOP</a>
+            </li>
+            <li class="header__item">
+              <a class="header__link" href="#">PAGE</a>
+            </li>
+            <li class="header__item">
+              <a class="header__link" href="#">BLOG</a>
+            </li>
+            <li class="header__item">
+              <a class="header__link" href="#">CONTACT</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__user-nav">
+          <a class="header__user-link header__user-link--user" href="#">
+          </a>
+          <a class="header__user-link header__user-link--search" href="#">
+          </a>
+          <a class="header__user-link header__user-link--heart" href="#">
+            <span class="header__num">3</span>
+          </a>
+          <a class="header__user-link header__user-link--cart" href="#">
+            <span class="header__num">7</span>
+          </a>
+        </div>
+      </div>
+    </div> 
+  </header>
   <script src="js/main.min.js"></script>
 </body>
 </html>
