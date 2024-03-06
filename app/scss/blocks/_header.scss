@@ -21,6 +21,8 @@
   }
 
   &__link {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
     color: $default-black;
     padding-bottom: 1px;
     border-bottom: 1px solid transparent;
@@ -32,12 +34,14 @@
     &:hover {
       border-color: $accent-color;
       color: $accent-color;
+      font-weight: 700;
     }
   }
 
   &__link--active {
     border-bottom: 1px solid $accent-color;
     color: $accent-color;
+    font-weight: 700;
   }
 
   &__user-nav {
