@@ -1,0 +1,56 @@
+.fashion {
+  background-image: url("../../img/fashion-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__popup {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 480px;
+    max-width: 540px;
+    width: 100%;
+    margin-right: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__image {
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  &__content {
+    max-width: 570px;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+    color: $accent-color;
+    font-size: 22px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  &__text {
+    margin-bottom: 55px;
+  }
+}

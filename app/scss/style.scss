@@ -4,6 +4,9 @@
 @import "libs";
 @import "./blocks/header";
 @import "./blocks/slider";
+@import "./blocks/categories";
+@import "./blocks/fashion";
+@import "./blocks/products";
 @import "./blocks/footer";
 
 html,
@@ -19,6 +22,10 @@ body {
   line-height: 26px;
   display: flex;
   flex-direction: column;
+}
+
+.section {
+  padding: 120px 0;
 }
 
 .container {
@@ -39,4 +46,18 @@ body {
 
 .main {
   flex-grow: 1;
+}
+
+.section-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: $default-black;
+  text-transform: uppercase;
+}
+
+.section-subtitle {
+  display: flex;
+  text-align: center;
+  max-width: 570px;
 }
