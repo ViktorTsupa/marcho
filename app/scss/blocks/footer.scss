@@ -108,7 +108,7 @@
   }
 
   &__input {
-    padding: 10px 15px;
+    padding: 15px;
     max-width: 320px;
     width: 100%;
     margin-right: 10px;
@@ -129,9 +129,6 @@
 
   &__copyright {
     grid-column: 1 / 4;
-  }
-
-  &__bottom-text {
   }
 
   &__payments {

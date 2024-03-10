@@ -1,0 +1,135 @@
+.products {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    margin: 0 auto 60px;
+  }
+
+  &__cards {
+    margin-bottom: 60px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 40px 30px;
+  }
+
+  &__link {
+    padding: 16px 27px;
+    color: $default-black;
+    border: 1px solid $accent-color;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+}
+
+.products-card {
+  max-width: 370px;
+  width: 100%;
+
+  &--sale {
+    .products-card__img-box::before {
+      content: "SALE";
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      background-color: $accent-color;
+      color: $white-color;
+      padding: 6px 10px;
+    }
+  }
+
+  &:hover {
+    .products-card__box-link {
+      transform: translateX(0);
+    }
+  }
+
+  &__img-box {
+    position: relative;
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+
+  &__img {
+    object-fit: cover;
+  }
+
+  &__box-link {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    background-color: $white-color;
+    width: 220px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 25px;
+    transition: transform 0.5s;
+    box-shadow: 0px 5px 30px 0px rgba(152, 152, 152, 0.2);
+    transform: translateX(200%);
+  }
+
+  &__link {
+  }
+
+  &__link--line::before,
+  &__link--line::after {
+    content: "";
+    position: absolute;
+    background-color: #ececec;
+    height: 30px;
+    width: 1px;
+  }
+
+  &__link--line::before {
+    left: 70px;
+  }
+
+  &__link--line::after {
+    right: 70px;
+  }
+
+  &__icon {
+    font-size: 20px;
+    color: $default-black;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+
+  &__stars {
+    margin: 0 auto;
+    margin-bottom: 18px;
+  }
+
+  &__card-title {
+    font-size: 22px;
+    color: $default-black;
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    font-weight: 500;
+  }
+
+  &__price-new {
+    color: $default-black;
+    margin-right: 22px;
+  }
+
+  &__price-old {
+    text-decoration: line-through;
+  }
+}
