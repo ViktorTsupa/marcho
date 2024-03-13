@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-  <header class="header">
+  <header class="header header--404-page">
     <div class="container">
       <div class="header__inner">
         <a class="logo" href="#">
@@ -57,64 +57,18 @@
   </header>
 
   <main class="main">
-    <section class="top">
-      <div class="top__container" style="background-image: url('img/top-bg.jpg');">
-        <div class="container">
-          <h2 class="top__title">LOG IN</h2>
-          <div class="breadcrumbs">
-            <ul class="breadcrumbs__list">
-              <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="#">Home</a>
-              </li>
-              <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="#">Login</a>
-              </li>
-            </ul>
+    <section class="page-404">
+      <div class="container">
+        <div class="page-404__content">
+          <div class="page-404__inner">
+            <h2 class="page-404__title">OPPS! Page Not Found!!</h2>
+            <p class="page-404__text">
+              We,re sorry but we can’t seem to find the pages you request. This might be because you have typed the web address not find incorrectly.
+            </p>
+            <a class="page-404__link" href="#">BACK TO HOME</a>
           </div>
+          <img class="page-404__picture" src="img/img-404.png" alt="error images">
         </div>
-      </div>
-    </section>
-    
-    <section class="modal">
-      <div class="contaier">
-        <div class="modal__links">
-          <a class="modal__link" href="#">REGISTER</a>
-          <a class="modal__link modal__link--active" href="#">LOGIN</a>
-        </div>
-        <form class="modal__form">
-          <div class="modal__input-info">
-            <label class="modal__label">
-              <p class="modal__label-text">
-                Username or email address*
-              </p>
-              <input
-                type="text"
-                class="modal__input"
-                required
-              >
-            </label>
-            <label class="modal__label">
-              <p class="modal__label-text">
-                Password*
-              </p>
-              <input
-                type="password"
-                class="modal__input"
-                required
-              >
-            </label>
-          </div>
-          <label class="modal__label-box">
-            <input class="modal__input-box" type="checkbox">
-            Remember me
-          </label>
-          <button class="modal__btn modal__btn--margin" type="submit">
-            LOG IN
-          </button>
-          <a class="modal__link-bottom" href="#">
-            Lost your password?
-          </a>
-        </form>
       </div>
     </section>
   </main>

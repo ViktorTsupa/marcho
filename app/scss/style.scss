@@ -9,6 +9,8 @@
 @import "./blocks/products";
 @import "./blocks/promo";
 @import "./blocks/blog";
+@import "./blocks/modal";
+@import "./blocks/page-404";
 @import "./blocks/footer";
 
 html,
@@ -25,6 +27,10 @@ body {
   line-height: 26px;
   display: flex;
   flex-direction: column;
+}
+
+.header--404-page {
+  background-color: $bg;
 }
 
 .section {
@@ -147,77 +153,5 @@ body {
       right: -23px;
       top: 5px;
     }
-  }
-}
-
-.modal {
-  max-width: 570px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 120px 0;
-  line-height: 1;
-
-  &__links {
-    text-align: center;
-    margin-bottom: 55px;
-  }
-
-  &__link {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-size: 22px;
-    text-transform: uppercase;
-    color: #909090;
-
-    &:not(:last-child) {
-      margin-right: 60px;
-    }
-  }
-
-  &__link--active {
-    font-weight: 700;
-    color: $accent-color;
-  }
-
-  &__form {
-  }
-
-  &__label {
-  }
-
-  &__label-text {
-    margin-bottom: 15px;
-  }
-
-  &__input {
-    display: block;
-    width: 100%;
-    background-color: $bg;
-    height: 60px;
-    margin-bottom: 40px;
-    padding: 0 15px;
-  }
-
-  &__input-box {
-    margin-bottom: 20px;
-  }
-
-  &__btn {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
-    color: $white-color;
-    display: block;
-    width: 100%;
-    background-color: #292929;
-    height: 60px;
-    margin-bottom: 20px;
-    padding: 20px;
-  }
-
-  &__link-pass {
-    color: $accent-color;
   }
 }
