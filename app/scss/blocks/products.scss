@@ -19,14 +19,6 @@
     grid-template-rows: repeat(2, 1fr);
     gap: 40px 30px;
   }
-
-  &__link {
-    padding: 16px 27px;
-    color: $default-black;
-    border: 1px solid $accent-color;
-    text-transform: uppercase;
-    display: inline-block;
-  }
 }
 
 .products-card {
