@@ -22,8 +22,104 @@
 }
 
 .products-card {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  text-align: center;
   max-width: 370px;
   width: 100%;
+
+  &.products-card--list {
+    display: flex;
+    min-width: 100%;
+    min-height: 250px;
+    height: 100%;
+
+    .products-card__img-box::before {
+      display: none;
+    }
+
+    .products-card__img-box {
+      height: auto;
+      min-height: 250px;
+      max-width: 200px;
+      width: 100%;
+      margin: 0;
+    }
+
+    .products-card__box-link {
+      width: 115px;
+      background-color: transparent;
+      box-shadow: none;
+      top: 100px;
+      left: 0;
+      bottom: 0;
+    }
+
+    .products-card__link {
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+
+    .products-card__link--line {
+      display: none;
+    }
+
+    .fa-magnifying-glass,
+    .fa-heart {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      color: $default-grey;
+      background-color: $white-color;
+      transition:
+        color 0.3s,
+        transform 0.3s;
+
+      &:hover {
+        color: $accent-color;
+      }
+    }
+
+    .products-card__wrapper-box {
+      text-align: left;
+      border: 1px solid $border;
+      padding: 25px 40px 30px;
+    }
+
+    .products-card__box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .products-card__content-box {
+      display: block;
+    }
+
+    .products-card__card-title {
+      order: -1;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .products-card__price {
+      order: -1;
+      margin-right: 35px;
+    }
+
+    .products-card__stars {
+      margin: 0;
+    }
+
+    .products-card__text {
+      margin-bottom: 15px;
+    }
+  }
 
   &--sale {
     .products-card__img-box::before {
@@ -34,6 +130,7 @@
       background-color: $accent-color;
       color: $white-color;
       padding: 6px 10px;
+      text-transform: uppercase;
     }
   }
 
@@ -50,6 +147,8 @@
   }
 
   &__img {
+    max-height: 370px;
+    height: 100%;
     object-fit: cover;
   }
 
@@ -71,14 +170,11 @@
     transform: translateX(200%);
   }
 
-  &__link {
-  }
-
   &__link--line::before,
   &__link--line::after {
     content: "";
     position: absolute;
-    background-color: #ececec;
+    background-color: $border;
     height: 30px;
     width: 1px;
   }
@@ -98,6 +194,27 @@
 
     &:hover {
       color: $accent-color;
+    }
+  }
+
+  &__content-box {
+    display: none;
+  }
+
+  &__btn {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: $white-color;
+    padding: 12px 40px;
+    color: $white-color;
+    background-color: $default-black;
+    transition:
+      background-color 0.3s,
+      box-shadow 0.3s;
+
+    &:hover {
+      background-color: $accent-color;
+      box-shadow: 0 7px 20px 0 rgba(255, 17, 48, 0.3);
     }
   }
 

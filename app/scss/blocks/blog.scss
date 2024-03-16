@@ -43,14 +43,16 @@
 
   &__item-bottom {
     max-width: 370px;
-    border: 1px solid #ececec;
+    border: 1px solid $border;
     transition:
       box-shadow 0.3s,
-      border 0.3s;
+      border 0.3s,
+      transform 0.3s;
 
     &:hover {
       box-shadow: 20px 0px 60px 0px rgba(202, 202, 202, 0.35);
       border-color: transparent;
+      transform: scale(1.01);
     }
   }
 

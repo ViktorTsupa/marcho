@@ -1,9 +1,53 @@
 $(function () {
+
+  $('.shop-content__btn').on('click', function () {
+    $(this).addClass('.active-icon')
+    $('.shop-content__btn').removeClass('.active-icon');
+  });
+
+  $('.button-list').on('click', function () {
+    $('.products-card').addClass('products-card--list');
+  });
+
+  $('.button-grid').on('click', function () {
+    $('.products-card').removeClass('products-card--list');
+  });
+
+  $('.filter-price__input').ionRangeSlider({
+    type: "double",
+    prefix: "$",
+    onStart: function (data) {
+      $('.filter-price__from').text(data.from);
+      $('.filter-price__to').text(data.to);
+    },
+    onChange: function (data) {
+      $('.filter-price__from').text(data.from);
+      $('.filter-price__to').text(data.to);
+    }
+  });
+
   $('.slider__inner').slick({
     dots: true,
     arrows: false,
     fade: true,
     autoplay: true
+  });
+
+  const buttons = document.querySelectorAll('.shop-content__btn');
+
+  function handleClick(event) {
+    buttons.forEach(button => {
+      button.classList.remove('active-btn');
+      button.querySelector('svg').classList.remove('active-icon');
+    });
+
+    const clickedButton = event.currentTarget;
+    clickedButton.classList.add('active-btn');
+    clickedButton.querySelector('svg').classList.add('active-icon');
+  }
+
+  buttons.forEach(button => {
+    button.addEventListener('click', handleClick);
   });
 });
 
