@@ -4,11 +4,8 @@
   padding: 75px 0 25px;
   background-color: $bg;
 
-  &__inner {
-  }
-
   &__top {
-    border-bottom: 1px solid #ececec;
+    border-bottom: 1px solid $border;
     padding-bottom: 55px;
     margin-bottom: 25px;
 
@@ -27,9 +24,6 @@
 
   &__addres {
     max-width: 250px;
-  }
-
-  &__email {
   }
 
   &__phone {
@@ -60,9 +54,6 @@
     }
   }
 
-  &__social-img {
-  }
-
   &__item {
     overflow: hidden;
   }
@@ -72,10 +63,7 @@
     font-weight: 500;
     font-size: 22px;
     color: $default-black;
-    margin-bottom: 20px;
-  }
-
-  &__list {
+    margin-bottom: 30px;
   }
 
   &__logo {
@@ -104,11 +92,8 @@
     margin-bottom: 30px;
   }
 
-  &__form {
-  }
-
   &__input {
-    padding: 10px 15px;
+    padding: 15px;
     max-width: 320px;
     width: 100%;
     margin-right: 10px;
@@ -127,11 +112,8 @@
     @include page-grid;
   }
 
-  &__copyright {
-    grid-column: 1 / 4;
-  }
-
   &__bottom-text {
+    grid-column: 1 / 5;
   }
 
   &__payments {
@@ -148,8 +130,5 @@
     &:not(:last-child) {
       margin-right: 25px;
     }
-  }
-
-  &__img {
   }
 }

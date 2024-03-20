@@ -1,0 +1,176 @@
+.categories {
+  background-image: url("../../img/decors/categories-bg-left.png");
+  background-repeat: no-repeat;
+  background-position: center left;
+
+  &__inner {
+    background-image: url("../../img/decors/gategories-bg-right.png");
+    background-repeat: no-repeat;
+    background-position: center right;
+  }
+
+  &__top-list {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 110px;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+    }
+
+    &::before {
+      background-image: url("../../img/decors/circle.jpg");
+      width: 120px;
+      height: 120px;
+      top: -40px;
+      left: -45px;
+    }
+
+    &::after {
+      background-image: url("../../img/decors/square.jpg");
+      width: 65px;
+      height: 52px;
+      bottom: -22px;
+      right: -22px;
+    }
+  }
+
+  &__top-item {
+    background-color: $white-color;
+    padding: 60px 40px;
+    text-align: left;
+    box-shadow: 20px 0px 60px 0px rgba(202, 202, 202, 0.35);
+
+    &::before {
+      content: "";
+      width: 60px;
+      height: 60px;
+      display: block;
+      margin-bottom: 35px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
+  &__top-item--car::before {
+    background-image: url("../../img/icons/car.png");
+  }
+
+  &__top-item--days::before {
+    background-image: url("../../img/icons/30-days.png");
+  }
+
+  &__top-item--support::before {
+    background-image: url("../../img/icons/support.png");
+  }
+
+  &__text {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: $default-black;
+    margin-bottom: 20px;
+  }
+
+  &__img {
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 35px;
+  }
+
+  &__subtitle {
+    margin: 0 auto;
+    margin-bottom: 55px;
+  }
+
+  &__bottom-list {
+    justify-content: center;
+    align-items: center;
+    @include page-grid;
+    row-gap: 30px;
+    height: 630px;
+  }
+
+  &__item {
+    height: 100%;
+    padding: 40px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__bottom-item--jewellry {
+    grid-column: 1 / 5;
+    grid-row: span 2;
+  }
+
+  &__bottom-item--accessories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-column: 5 / 13;
+  }
+
+  &__bottom-item--fashion-m {
+    grid-column: 5 / 9;
+  }
+
+  &__bottom-item--fashion-g {
+    grid-column: 9 / 13;
+  }
+
+  &__bottom-text {
+    margin-bottom: 5px;
+  }
+
+  &__bottom-text--purple {
+    color: #5800e4;
+  }
+
+  &__bottom-text--red {
+    color: #fe3e57;
+  }
+
+  &__bottom-text--yellow {
+    color: #ffb534;
+  }
+
+  &__bottom-text--blue {
+    color: #34c3ff;
+  }
+
+  &__bottom-desc {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: $default-black;
+    margin-bottom: 5px;
+  }
+
+  &__link {
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    line-height: 1;
+    color: $default-black;
+    max-width: fit-content;
+    padding-bottom: 5px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.3s;
+
+    &:hover {
+      border-color: $accent-color;
+      color: $accent-color;
+    }
+  }
+}

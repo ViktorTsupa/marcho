@@ -1,0 +1,244 @@
+.products {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    margin: 0 auto 60px;
+  }
+
+  &__cards {
+    margin-bottom: 60px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 40px 30px;
+  }
+}
+
+.products-card {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  max-width: 370px;
+  width: 100%;
+
+  &.products-card--list {
+    display: flex;
+    min-width: 100%;
+    min-height: 250px;
+    height: 100%;
+
+    .products-card__img-box::before {
+      display: none;
+    }
+
+    .products-card__img-box {
+      height: auto;
+      min-height: 250px;
+      max-width: 200px;
+      width: 100%;
+      margin: 0;
+    }
+
+    .products-card__box-link {
+      width: 115px;
+      background-color: transparent;
+      box-shadow: none;
+      top: 100px;
+      left: 0;
+      bottom: 0;
+    }
+
+    .products-card__link {
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+
+    .products-card__link--line {
+      display: none;
+    }
+
+    .fa-magnifying-glass,
+    .fa-heart {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      color: $default-grey;
+      background-color: $white-color;
+      transition:
+        color 0.3s,
+        transform 0.3s;
+
+      &:hover {
+        color: $accent-color;
+      }
+    }
+
+    .products-card__wrapper-box {
+      text-align: left;
+      border: 1px solid $border;
+      padding: 25px 40px 30px;
+    }
+
+    .products-card__box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .products-card__content-box {
+      display: block;
+    }
+
+    .products-card__card-title {
+      order: -1;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .products-card__price {
+      order: -1;
+      margin-right: 35px;
+    }
+
+    .stars {
+      margin: 0;
+    }
+
+    .products-card__text {
+      margin-bottom: 15px;
+    }
+  }
+
+  &--sale {
+    .products-card__img-box::before {
+      content: "SALE";
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      background-color: $accent-color;
+      color: $white-color;
+      padding: 6px 10px;
+      text-transform: uppercase;
+    }
+  }
+
+  &:hover {
+    .products-card__box-link {
+      transform: translateX(0);
+    }
+  }
+
+  &__img-box {
+    position: relative;
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+
+  &__img {
+    max-height: 370px;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__box-link {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    background-color: $white-color;
+    width: 220px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 25px;
+    transition: transform 0.5s;
+    box-shadow: 0px 5px 30px 0px rgba(152, 152, 152, 0.2);
+    transform: translateX(200%);
+  }
+
+  &__link--line::before,
+  &__link--line::after {
+    content: "";
+    position: absolute;
+    background-color: $border;
+    height: 30px;
+    width: 1px;
+  }
+
+  &__link--line::before {
+    left: 70px;
+  }
+
+  &__link--line::after {
+    right: 70px;
+  }
+
+  &__icon {
+    font-size: 20px;
+    color: $default-black;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+
+  &__content-box {
+    display: none;
+  }
+
+  &__btn {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: $white-color;
+    padding: 12px 40px;
+    color: $white-color;
+    background-color: $default-black;
+    transition:
+      background-color 0.3s,
+      box-shadow 0.3s;
+
+    &:hover {
+      background-color: $accent-color;
+      box-shadow: 0 7px 20px 0 rgba(255, 17, 48, 0.3);
+    }
+  }
+
+  &__card-title {
+    font-size: 22px;
+    color: $default-black;
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    font-weight: 500;
+  }
+
+  &__price-new {
+    color: $default-black;
+    margin-right: 22px;
+  }
+
+  &__price-old {
+    text-decoration: line-through;
+  }
+}
+
+.stars {
+  margin: 0 auto;
+  margin-bottom: 18px;
+}

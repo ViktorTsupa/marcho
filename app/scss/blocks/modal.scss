@@ -1,0 +1,87 @@
+.modal {
+  max-width: 570px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 120px 0;
+  line-height: 1;
+
+  &__links {
+    text-align: center;
+    margin-bottom: 55px;
+  }
+
+  &__link {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #909090;
+
+    &:not(:last-child) {
+      margin-right: 60px;
+    }
+  }
+
+  &__link--active {
+    font-weight: 700;
+    color: $accent-color;
+  }
+
+  &__input-form {
+    margin-bottom: 30px;
+  }
+
+  &__input-info {
+    margin-bottom: 60px;
+  }
+
+  &__label {
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__label-text {
+    margin-bottom: 15px;
+  }
+
+  &__input {
+    width: 100%;
+    background-color: $bg;
+    height: 60px;
+    padding: 0 15px;
+  }
+
+  &__text {
+    line-height: 26px;
+    margin-bottom: 35px;
+  }
+
+  &__label-box {
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+
+  &__btn {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-align: center;
+    color: $white-color;
+    display: block;
+    width: 100%;
+    background-color: #292929;
+    padding: 22px 20px;
+  }
+
+  &__btn--margin {
+    margin-bottom: 20px;
+  }
+
+  &__link-bottom {
+    color: $accent-color;
+  }
+}

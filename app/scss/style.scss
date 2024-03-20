@@ -4,21 +4,37 @@
 @import "libs";
 @import "./blocks/header";
 @import "./blocks/slider";
+@import "./blocks/categories";
+@import "./blocks/fashion";
+@import "./blocks/products";
+@import "./blocks/promo";
+@import "./blocks/blog";
+@import "./blocks/modal";
+@import "./blocks/page-404";
+@import "./blocks/shop";
+@import "./blocks/products-page";
 @import "./blocks/footer";
 
 html,
 body {
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Quicksand", sans-serif;
   font-weight: 500;
   font-size: 16px;
-  color: $default-grey;
   line-height: 26px;
-  display: flex;
-  flex-direction: column;
+  color: $default-grey;
+}
+
+.header--404-page {
+  background-color: $bg;
+}
+
+.section {
+  padding: 120px 0;
 }
 
 .container {
@@ -31,12 +47,111 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   color: $white-color;
-  padding: 12px 25px;
+  padding: 15px 33px;
   text-transform: uppercase;
   background-color: $accent-color;
   box-shadow: 0 7px 20px 0 rgba(255, 17, 48, 0.3);
 }
 
+.button--padding {
+  padding: 15px 25px;
+}
+
 .main {
   flex-grow: 1;
+}
+
+.section-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: $default-black;
+  text-transform: uppercase;
+}
+
+.section-subtitle {
+  display: flex;
+  text-align: center;
+  max-width: 580px;
+}
+
+.link {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  padding: 15px 30px;
+  color: $default-black;
+  border: 1px solid $accent-color;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.top {
+  text-align: center;
+  line-height: 1;
+
+  &__container {
+    max-width: 1700px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    padding: 130px 0 135px;
+  }
+
+  &__title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 48px;
+    color: $default-black;
+    margin-bottom: 22px;
+  }
+}
+
+.breadcrumbs {
+  line-height: 1;
+
+  &__list {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  &__item {
+    color: #727272;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+
+    &:last-child {
+      color: $accent-color;
+    }
+
+    &:first-child::before {
+      content: "";
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url("../img/icons/breadcrumb-home.png");
+      width: 16px;
+      height: 16px;
+      left: -22px;
+      top: -2px;
+    }
+
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url("../img/icons/breadcrumb-arrow.png");
+      width: 8px;
+      height: 10px;
+      right: -23px;
+      top: 5px;
+    }
+  }
 }

@@ -2,6 +2,9 @@ $accent-color: #fe3e57;
 $default-black: #29282d;
 $default-grey: #8d8d8d;
 $bg: #f6f6f6;
+$border: #ececec;
+$border-filter: #ebebeb;
+$border-input: #f0f0f0;
 $white-color: #fff;
 
 $tablet-min-size-width: 640px;
@@ -9,3 +12,12 @@ $tablet-min-width: 768px;
 $desktop-min-size-width: 1024px;
 $desktop-min-width: 1280px;
 $design-width: 1440px;
+
+%checkbox-hidden {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  cursor: pointer;
+  clip: rect(0 0 0 0);
+  position: absolute;
+}
