@@ -112,7 +112,7 @@
       margin-right: 35px;
     }
 
-    .products-card__stars {
+    .stars {
       margin: 0;
     }
 
@@ -218,11 +218,6 @@
     }
   }
 
-  &__stars {
-    margin: 0 auto;
-    margin-bottom: 18px;
-  }
-
   &__card-title {
     font-size: 22px;
     color: $default-black;
@@ -241,4 +236,9 @@
   &__price-old {
     text-decoration: line-through;
   }
+}
+
+.stars {
+  margin: 0 auto;
+  margin-bottom: 18px;
 }
