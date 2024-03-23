@@ -30,30 +30,6 @@
     margin-bottom: 30px;
   }
 
-  &__social-list {
-    align-items: center;
-    display: flex;
-  }
-
-  &__social-item {
-    &:not(:last-child) {
-      margin-right: 19px;
-    }
-  }
-
-  &__social-link {
-    path {
-      transition: fill 0.5s;
-      fill: $default-grey;
-    }
-
-    &:hover {
-      path {
-        fill: $accent-color;
-      }
-    }
-  }
-
   &__item {
     overflow: hidden;
   }
@@ -129,6 +105,32 @@
   &__payments-link {
     &:not(:last-child) {
       margin-right: 25px;
+    }
+  }
+}
+
+.socials {
+  align-items: center;
+  display: flex;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 19px;
+    }
+  }
+
+  &__link {
+    vertical-align: sub;
+
+    path {
+      transition: fill 0.5s;
+      fill: $default-grey;
+    }
+
+    &:hover {
+      path {
+        fill: $accent-color;
+      }
     }
   }
 }

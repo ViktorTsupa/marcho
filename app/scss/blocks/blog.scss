@@ -46,13 +46,11 @@
     border: 1px solid $border;
     transition:
       box-shadow 0.3s,
-      border 0.3s,
-      transform 0.3s;
+      border-color 0.3s;
 
     &:hover {
       box-shadow: 20px 0px 60px 0px rgba(202, 202, 202, 0.35);
       border-color: transparent;
-      transform: scale(1.01);
     }
   }
 
@@ -60,47 +58,13 @@
     padding: 30px 40px 25px;
   }
 
-  &__link-author {
-    display: flex;
-    align-items: center;
-
-    &::before {
-      content: "";
-      background-image: url("../../img/icons/blog-user.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      width: 20px;
-      height: 20px;
-      margin-right: 10px;
-    }
+  &__author {
+    margin-bottom: 10px;
   }
 
   &__picture {
     height: 288px;
     object-fit: cover;
-  }
-
-  &__item-author {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-
-  &__text {
-    display: flex;
-    align-items: center;
-
-    &::before {
-      content: "";
-      background-image: url("../../img/icons/blog-clock.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      width: 20px;
-      height: 20px;
-      margin-right: 10px;
-    }
   }
 
   &__subtitle-link {
@@ -124,5 +88,42 @@
 
   &__arrow {
     font-size: 10px;
+  }
+}
+
+.blog-user {
+  display: flex;
+  gap: 33px;
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "";
+      background-image: url("../../img/icons/blog-user.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "";
+      background-image: url("../../img/icons/blog-clock.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
   }
 }

@@ -2,10 +2,6 @@
   padding-top: 120px;
 }
 
-.products-item {
-  margin-bottom: 120px;
-}
-
 .products-subtitle {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
@@ -62,7 +58,7 @@
 }
 
 .products-item {
-  margin-bottom: 115px;
+  margin-bottom: 120px;
 
   &__inner {
     display: flex;
@@ -367,10 +363,13 @@
       display: block;
     }
   }
+
+  &__reviews {
+     margin-bottom: 40px;
+  }
 }
 
 .comments {
-  margin-bottom: 40px;
   display: flex;
 
   &__img {
@@ -434,7 +433,9 @@
       height: 15px;
     }
   }
+}
 
+.feedback-form {
   &__form-title {
     font-family: "Roboto", sans-serif;
     line-height: 28px;
@@ -470,7 +471,7 @@
   &__input {
     @extend %checkbox-hidden;
 
-    &:checked + .comments__checkbox {
+    &:checked + .feedback-form__checkbox {
       path {
         fill: #ffc35b;
       }
