@@ -10,7 +10,7 @@
     align-items: center;
   }
 
-  &__popup {
+  &__link-popup {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -21,17 +21,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+    position: relative;
 
-  &__image {
-    transition: transform 0.3s;
-
-    &:hover {
-      transform: scale(1.1);
-    }
-
-    &:active {
-      transform: scale(0.9);
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-image: url("../../img/play-btn.png");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 130px;
+      height: 130px;
     }
   }
 

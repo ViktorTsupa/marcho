@@ -1,0 +1,263 @@
+.blog-page {
+  padding: 120px 0;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__content {
+    max-width: 770px;
+    width: 100%;
+    margin-right: 30px;
+  }
+
+  &__item {
+    transition: box-shadow 0.3s;
+
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+
+    &:hover {
+      box-shadow: 0px 20px 60px 0px rgba(202, 202, 202, 0.35);
+    }
+
+    &--slider .slick-slider {
+      height: 450px;
+      overflow: hidden;
+    }
+  }
+
+  &__link {
+    display: block;
+
+    &--popup {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: url("../../img/icons/blog-play-btn.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 114px;
+        height: 114px;
+      }
+    }
+  }
+
+  &__img {
+    max-width: 770px;
+    height: 450px;
+    display: block;
+    object-fit: cover;
+  }
+
+  &__item-box {
+    padding: 40px;
+    border: 1px solid $border;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: transparent;
+    }
+  }
+
+  &__title-link {
+    display: block;
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 32px;
+    color: $default-black;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+
+  &__author {
+    margin-bottom: 30px;
+  }
+
+  &__aside {
+    max-width: 370px;
+    width: 100%;
+  }
+}
+
+.slick-arrow {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: $accent-color;
+  border-radius: 50%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 7px 20px 0px rgba(254, 62, 87, 0.3);
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
+
+  path {
+    fill: $white-color;
+  }
+}
+
+.slick-disabled {
+  background-color: $white-color;
+  box-shadow: 0px 7px 20px 0px rgba(168, 168, 168, 0.3);
+
+  path {
+    fill: $accent-color;
+  }
+}
+
+.slick-prev {
+  left: 40px;
+}
+
+.slick-next {
+  right: 40px;
+}
+
+.person {
+  padding: 40px 25px;
+  border: 1px solid $border;
+  text-align: center;
+
+  &__picture {
+    max-width: 160px;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    margin: 0 auto 35px;
+  }
+
+  &__name {
+    display: block;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: $default-black;
+    font-style: normal;
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    color: $accent-color;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    line-height: 26px;
+    margin-bottom: 25px;
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+
+  &__link {
+    path {
+      transition: fill 0.5s;
+      fill: $default-grey;
+    }
+
+    &:hover {
+      path {
+        fill: $accent-color;
+      }
+    }
+  }
+
+  &__link-social {
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+}
+
+.post {
+  padding: 30px 30px 40px;
+  border: 1px solid $border;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: $default-black;
+
+  &__title {
+    font-size: 22px;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid $border;
+    }
+  }
+
+  &__link {
+    margin-right: 20px;
+  }
+
+  &__img {
+    min-width: 80px;
+    height: 80px;
+    object-fit: cover;
+  }
+
+  &__item-box {
+    line-height: 28px;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+  }
+
+  &__date {
+    color: $default-grey;
+    padding-left: 26px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      background-image: url("../../img/icons/calendar.png");
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
