@@ -8,6 +8,7 @@
 @import "./blocks/fashion";
 @import "./blocks/products";
 @import "./blocks/promo";
+@import "./blocks/partners";
 @import "./blocks/blog";
 @import "./blocks/modal";
 @import "./blocks/page-404";
@@ -37,7 +38,11 @@ body {
 }
 
 .section {
-  padding: 120px 0;
+  margin-bottom: 120px;
+
+  @include on-tablet {
+    margin-bottom: 80px;
+  }
 }
 
 .container {
@@ -70,6 +75,22 @@ body {
   font-size: 48px;
   color: $default-black;
   text-transform: uppercase;
+
+  @include on-desktop-s {
+    font-size: 40px;
+  }
+
+  @include on-tablet {
+    font-size: 34px;
+  }
+
+  @include on-mobile {
+    font-size: 30px;
+  }
+
+  @include on-mobile {
+    font-size: 27px;
+  }
 }
 
 .section-subtitle {
@@ -86,6 +107,7 @@ body {
   border: 1px solid $accent-color;
   text-transform: uppercase;
   display: inline-block;
+  transition: transform 0.3s;
 }
 
 .top {
@@ -94,6 +116,7 @@ body {
 
   &__container {
     max-width: 1700px;
+    width: 100%;
     margin: 0 auto;
     background-repeat: no-repeat;
     background-size: cover;
@@ -117,11 +140,17 @@ body {
     justify-content: center;
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
   }
 
   &__item {
     color: #727272;
     position: relative;
+
+    &:first-child {
+      margin-left: 30px;
+    }
 
     &:not(:last-child) {
       margin-right: 40px;
@@ -158,3 +187,4 @@ body {
     }
   }
 }
+

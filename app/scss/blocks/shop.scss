@@ -1,14 +1,66 @@
 .shop {
   padding: 120px 0;
 
+  @include on-desktop {
+    padding: 80px 0;
+  }
+
+  @include on-mobile {
+    padding: 60px 0;
+  }
+
   &__inner {
     display: flex;
+    
+    @include on-desktop {
+      flex-direction: column;
+      position: relative;
+    }
+  }
+
+  &__filters-btn {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      background-color: $accent-color;
+      margin: 0 30px 15px auto;
+      z-index: 101;
+    }
   }
 
   &__filters {
     max-width: 370px;
     width: 100%;
     margin-right: 30px;
+
+    @include on-desktop {
+      max-width: 100%;
+      margin-right: 0;
+      margin-bottom: 30px;
+      position: absolute;
+      top: 0;
+      z-index: 100;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+
+      @include on-desktop {
+        background-color: #fff;
+        margin-bottom: 0;
+
+        &:first-child {
+          border-top: none;
+        }
+      }
+    }
   }
 }
 
@@ -18,8 +70,8 @@
     padding: 35px 30px 40px;
     line-height: 1;
 
-    &:not(:last-child) {
-      margin-bottom: 40px;
+    @include on-mobile {
+      padding: 20px 20px 20px;
     }
   }
 
@@ -73,12 +125,22 @@
 .filter-price {
   &__title {
     margin-bottom: 50px;
+
+    @include on-tablet {
+      margin-bottom: 25px;
+    }
   }
 
   &__label {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include on-tablet {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
   }
 
   &__btn {
@@ -90,6 +152,10 @@
 .irs--flat {
   height: 30px;
   margin-bottom: 30px;
+
+  @include on-tablet {
+    margin-bottom: 20px;
+  }
 }
 
 .irs-from,
@@ -219,6 +285,7 @@
 }
 
 .filter-size {
+
   &__title {
     margin-bottom: 40px;
   }
@@ -299,6 +366,11 @@
 }
 
 .filter-tags {
+
+  @include on-desktop {
+    background-color: #fff;
+  }
+
   &__title {
     line-height: 28px;
     text-transform: none;
@@ -340,7 +412,12 @@
 }
 
 .shop-content {
+  max-width: 770px;
   width: 100%;
+
+  @include on-desktop {
+    max-width: 100%;
+  }
 
   &__filter {
     border: 1px solid $border-filter;
@@ -350,10 +427,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include on-desktop {
+      margin-bottom: 20px;
+    }
+
+    @include on-mobile {
+      justify-content: end;
+      padding: 15px 20px;
+    }
   }
 
   &__buttons {
     display: flex;
+
+    @include on-mobile {
+      display: none;
+    }
   }
 
   &__btn {
@@ -373,6 +463,26 @@
     padding-bottom: 40px;
     margin-bottom: 40px;
     border-bottom: 1px solid #efefef;
+
+    @include on-desktop {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include on-tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include on-mobile-s {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__no-grid {
+    display: flex;
+    max-width: 100%;
+    width: 100%;
   }
 
   &__select {
@@ -383,6 +493,10 @@
 
   &__sort {
     margin-right: 30px;
+
+    @include on-mobile-s {
+      margin-right: 10px;
+    }
   }
 
   &__pagination {

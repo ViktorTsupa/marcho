@@ -5,9 +5,17 @@
   padding: 120px 0;
   line-height: 1;
 
+  @include on-mobile {
+    padding: 80px 20px;
+  }
+
   &__links {
     text-align: center;
     margin-bottom: 55px;
+
+    @include on-mobile {
+      margin-bottom: 30px;
+    }
   }
 
   &__link {
@@ -33,6 +41,10 @@
 
   &__input-info {
     margin-bottom: 60px;
+
+    @include on-mobile {
+      margin-bottom: 30px;
+    }
   }
 
   &__label {
@@ -40,6 +52,10 @@
 
     &:not(:last-child) {
       margin-bottom: 40px;
+
+      @include on-mobile {
+        margin-bottom: 25px;
+      }
     }
   }
 
@@ -57,6 +73,10 @@
   &__text {
     line-height: 26px;
     margin-bottom: 35px;
+
+    @include on-mobile {
+      margin-bottom: 20px;
+    }
   }
 
   &__label-box {

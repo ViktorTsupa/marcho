@@ -1,15 +1,12 @@
 .blog {
   text-align: center;
-  padding: 115px 0 165px;
   background-image: url("../../img/blog-bg.png");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom center;
+  margin-bottom: 165px;
 
-  &__list-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 110px;
+  @include on-desktop {
+    margin-bottom: 100px;
   }
 
   &__title {
@@ -23,7 +20,7 @@
   &__items {
     text-align: left;
     display: grid;
-    column-gap: 30px;
+    gap: 30px;
     grid-template-columns: repeat(3, 1fr);
     position: relative;
 
@@ -35,14 +32,24 @@
       width: 126px;
       height: 53px;
       position: absolute;
-      right: -25px;
+      right: -22px;
       top: -30px;
-      z-index: -1;
+      z-index: -2;
+
+      @include on-desktop {
+        display: none;
+      }
+    }
+
+    @include on-desktop {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
     }
   }
 
   &__item-bottom {
-    max-width: 370px;
+    width: 370px;
     border: 1px solid $border;
     transition:
       box-shadow 0.3s,
@@ -56,6 +63,10 @@
 
   &__item-inner {
     padding: 30px 40px 25px;
+
+    @include on-mobile {
+      padding: 20px 20px 15px;
+    }
   }
 
   &__author {
@@ -93,7 +104,13 @@
 
 .blog-user {
   display: flex;
-  gap: 33px;
+  justify-content: space-between;
+  max-width: 295px;
+
+  @include on-mobile-s {
+    flex-wrap: wrap;
+    gap: 10px 20px;
+  }
 
   &__link {
     display: flex;

@@ -1,7 +1,13 @@
 @import "vars";
 
-@mixin on-tablet-s {
-  @media (min-width: $tablet-min-size-width) {
+@mixin on-mobile-s {
+  @media (max-width: $max-width-500) {
+    @content;
+  }
+}
+
+@mixin on-mobile {
+  @media (max-width: $max-width-650) {
     @content;
   }
 }
@@ -13,25 +19,19 @@
 }
 
 @mixin on-tablet {
-  @media (min-width: $tablet-min-width) {
+  @media (max-width: $max-width-860) {
     @content;
   }
 }
 
 @mixin on-desktop-s {
-  @media (min-width: $desktop-min-size-width) {
+  @media (max-width: $max-width-1024) {
     @content;
   }
 }
 
 @mixin on-desktop {
-  @media (min-width: $desktop-min-width) {
-    @content;
-  }
-}
-
-@mixin design {
-  @media (min-width: $design-width) {
+  @media (max-width: $max-width-1200) {
     @content;
   }
 }
@@ -40,16 +40,21 @@
   --columns: 2;
 
   display: grid;
-  column-gap: 20px;
-  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: 30px;
 
-  @include on-tablet-s {
-    --columns: 6;
-
-    column-gap: 30px;
+  @include on-desktop {
+    --columns: 12;
   }
 
   @include on-desktop-s {
-    --columns: 12;
+    --columns: 6;
+  }
+
+  @include on-tablet {
+    gap: 20px;
+  }
+
+  @include on-mobile {
+    --columns: 2;
   }
 }

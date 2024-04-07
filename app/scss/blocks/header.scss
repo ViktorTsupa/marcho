@@ -5,15 +5,96 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
   }
-  
+
+  &__menu {
+    @include on-mobile {
+      order: 0;
+    }
+
+    @include on-tablet {
+      padding-left: 50px;
+      order: 1;
+    }
+  }
+
+  &__btn {
+    display: none;
+
+    @include on-tablet {
+      height: 22px;
+      width: 30px;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: $default-black;
+        padding: 0;
+      }
+
+      &::before {
+        top: 0;
+      }
+
+      &::after {
+        bottom: 0;
+      }
+    }
+  }
+
+  &__btn-span {
+    @include on-tablet {
+      background-color: $default-black;
+      width: 100%;
+      height: 3px;
+    }
+  }
+
   &__list {
     display: flex;
+
+    @include on-tablet {
+      position: absolute;
+      background-color: $white-color;
+      top: 120px;
+      left: 0;
+      width: 100%;
+      padding-top: 40px;
+      flex-direction: column;
+      align-items: center;
+      transform: translateY(-200%);
+      transition: transform 0.4s;
+
+      &--active {
+        transform: translateY(0);
+        transition: transform 0.4s;
+        z-index: 9999;
+      }
+    }
   }
 
   &__item {
     &:not(:last-child) {
       margin-right: 35px;
+    }
+
+    @include on-tablet {
+      padding: 20px 15px;
+      width: 100%;
+      text-align: center;
+
+      &:not(:last-child) {
+        margin-right: 0;
+      }
     }
   }
 
@@ -33,6 +114,11 @@
       color: $accent-color;
       font-weight: 700;
     }
+
+    @include on-tablet {
+      width: 100%;
+      display: block;
+    }
   }
 
   &__link--active {
@@ -43,6 +129,17 @@
 
   &__user-nav {
     display: flex;
+
+    @include on-mobile {
+      width: 100%;
+      order: 1;
+      margin-top: 30px;
+      justify-content: end;
+    }
+
+    @include on-tablet {
+      margin-left: auto;
+    }
   }
 
   &__user-link {

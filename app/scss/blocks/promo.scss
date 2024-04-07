@@ -1,10 +1,21 @@
 .promo {
-  background-image: url("../../img/promo-bg.jpg");
+  background-image: url("../../img/promo-bg.png");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center top;
+  background-size: contain;
+  background-position: center left;
+  background-color: $bg;
   padding: 155px 0 160px;
   text-align: center;
+  margin-bottom: 120px;
+
+  @include on-desktop-s {
+    background-size: cover;
+  }
+
+  @include on-tablet {
+    margin-bottom: 80px;
+    padding: 90px 0 90px;
+  }
 
   &__content {
     max-width: 570px;
@@ -25,6 +36,10 @@
 
   &__clock {
     display: flex;
+
+    @include on-mobile {
+      justify-content: center;
+    }
   }
 
   &__clock-item {
@@ -40,6 +55,24 @@
 
     &:not(:last-child) {
       margin-right: 30px;
+
+      @include on-mobile {
+        margin-right: 15px;
+      }
+
+      @include on-mobile-s {
+        margin-right: 5px;
+      }
+    }
+
+    @include on-mobile {
+      width: 90px;
+      height: 90px;
+    }
+
+    @include on-mobile-s {
+      width: 70px;
+      height: 70px;
     }
   }
 
@@ -51,5 +84,25 @@
     text-align: center;
     padding-top: 10px;
     margin-bottom: 9px;
+
+    @include on-mobile {
+      font-size: 38px;
+      margin-bottom: 0;
+    }
+
+    @include on-mobile-s {
+      font-size: 30px;
+    }
+  }
+
+  &__text {
+    @include on-mobile {
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    @include on-mobile-s {
+      font-size: 14px;
+    }
   }
 }
