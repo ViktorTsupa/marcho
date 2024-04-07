@@ -7,8 +7,12 @@
   padding-top: 65px;
   position: relative;
 
-  &__container {
-    max-width: 1560px;
+  @include on-tablet {
+    background-size: contain;
+  }
+
+  @include on-mobile {
+    padding-bottom: 65px;
   }
 
   &__pagination {
@@ -18,6 +22,17 @@
 
   &__content {
     padding-top: 125px;
+
+    @include on-desktop {
+      width: 50%;
+      padding-top: 70px;
+    }
+
+    @include on-tablet {
+      padding-top: 0;
+      margin-bottom: 50px;
+      width: 100%;
+    }
   }
 
   &__title {
@@ -28,11 +43,48 @@
     color: $default-black;
     margin-bottom: 30px;
     max-width: 670px;
+
+    @include on-desktop-s {
+      font-size: 40px;
+      line-height: 48px;
+    }
+
+    @include on-tablet {
+      margin-bottom: 15px;
+    }
+
+    @include on-mobile {
+      font-size: 28px;
+      line-height: 38px;
+    }
   }
 
   &__text {
     max-width: 470px;
     margin-bottom: 55px;
+
+    @include on-tablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__picture {
+    @include on-desktop {
+      max-width: 50%;
+      object-fit: contain;
+    }
+  }
+}
+
+.slick-slide .slider__picture {
+  @include on-tablet {
+    display: none;
+  }
+}
+
+.slider__inner .slick-dots {
+  @include on-mobile {
+    bottom: -40px;
   }
 }
 

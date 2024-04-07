@@ -1,5 +1,13 @@
 .products-page {
   padding-top: 120px;
+
+  @include on-desktop {
+    padding-top: 80px;
+  }
+
+  @include on-mobile {
+    padding-top: 60px;
+  }
 }
 
 .products-subtitle {
@@ -17,6 +25,10 @@
     max-width: 140px;
     width: 100%;
     margin-right: 30px;
+
+    @include on-desktop {
+      display: none;
+    }
   }
 
   &__item {
@@ -26,8 +38,10 @@
   }
 
   &__img {
-    width: 140px;
-    height: 140px;
+    max-width: 140px;
+    width: 100%;
+    max-height: 140px;
+    height: 100%;
     object-fit: cover;
   }
 
@@ -37,15 +51,22 @@
   }
 
   &__item-main {
-    width: 560px;
-    height: 650px;
+    max-width: 560px;
+    width: 100%;
+    max-height: 650px;
     object-fit: cover;
   }
 
   &__picture {
-    width: 560px;
-    height: 650px;
+    max-width: 100%;
+    height: auto;
     object-fit: cover;
+  }
+}
+
+.slick-slide img + .products-slide__picture {
+  @include on-tablet {
+    display: block;
   }
 }
 
@@ -60,18 +81,45 @@
 .products-item {
   margin-bottom: 120px;
 
+  @include on-desktop {
+    margin-bottom: 80px;
+  }
+
+  @include on-mobile {
+    margin-bottom: 50px;
+  }
+
   &__inner {
     display: flex;
+
+    @include on-desktop-s {
+      display: block;
+    }
   }
 
   &__slide {
-    height: 650px;
+    max-height: 650px;
+    height: 100%;
     margin-right: 70px;
+
+    @include on-desktop-s {
+      margin-right: 0;
+      margin-bottom: 40px;
+      justify-content: center;
+    }
+
+    @include on-mobile-s {
+      margin-bottom: 25px;
+    }
   }
 
   &__content {
     max-width: 370px;
     width: 100%;
+
+    @include on-desktop-s {
+      max-width: 100%;
+    }
   }
 
   &__title {
@@ -80,6 +128,11 @@
     line-height: 34px;
     color: $default-black;
     margin-bottom: 15px;
+
+    @include on-mobile-s {
+      font-size: 20px;
+      line-height: normal;
+    }
   }
 
   &__rating-wrapper {
@@ -87,6 +140,15 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
+
+    @include on-desktop-s {
+      gap: 20px;
+      justify-content: start;
+    }
+
+    @include on-mobile-s {
+      justify-content: space-between;
+    }
   }
 
   &__price {
@@ -213,10 +275,27 @@
 
   &__subtitle {
     margin-bottom: 5px;
+
+    @include on-mobile-s {
+      display: block;
+      width: 100%;
+    }
+
+    &--gap {
+      @include on-mobile-s {
+        margin-bottom: -10px;
+      }
+    }
   }
 
   &__size {
     margin-bottom: 25px;
+
+    @include on-mobile-s {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
   }
 
   &__label {
@@ -323,10 +402,25 @@
   margin-bottom: 60px;
   border-bottom: 1px solid $border-input;
 
+  @include on-mobile {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+  }
+
   &__top {
     padding-bottom: 15px;
     margin-bottom: 50px;
     border-bottom: 1px solid $border-input;
+
+    @include on-mobile {
+      margin-bottom: 30px;
+      display: flex;
+      gap: 20px;
+    }
+
+    @include on-mobile-s {
+      flex-direction: column;
+    }
   }
 
   &__top-item {
@@ -337,6 +431,18 @@
 
     &:not(:last-child) {
       margin-right: 55px;
+
+      @include on-mobile {
+        margin-right: 0;
+      }
+
+      @include on-mobile-s {
+        margin-bottom: 10px;
+      }
+    }
+
+    @include on-mobile-s {
+      display: block;
     }
 
     &--active {
@@ -365,12 +471,18 @@
   }
 
   &__reviews {
-     margin-bottom: 40px;
+    margin-bottom: 40px;
   }
 }
 
 .comments {
   display: flex;
+
+  @include on-mobile {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
 
   &__img {
     width: 70px;
@@ -378,12 +490,24 @@
     margin-right: 30px;
     border-radius: 50%;
     object-fit: cover;
+
+    @include on-mobile {
+      margin-right: 15px;
+    }
+
+    @include on-mobile-s {
+      display: none;
+    }
   }
 
   &__content-top {
     margin-bottom: 10px;
     display: flex;
     align-items: center;
+
+    @include on-mobile {
+      margin-bottom: 0;
+    }
   }
 
   &__name {
@@ -392,11 +516,19 @@
     font-weight: 400;
     color: $default-black;
     margin-right: 13px;
+
+    @include on-mobile-s {
+      margin-right: 8px;
+    }
   }
 
   &__data {
     padding-left: 13px;
     position: relative;
+
+    @include on-mobile-s {
+      padding-left: 8px;
+    }
 
     &::before {
       content: "";
@@ -406,6 +538,10 @@
       width: 1px;
       height: 13px;
       background-color: $default-grey;
+
+      @include on-mobile-s {
+        height: 70%;
+      }
     }
   }
 
@@ -445,6 +581,10 @@
     position: relative;
     margin-bottom: 55px;
 
+    @include on-mobile {
+      margin-bottom: 25px;
+    }
+
     &::after {
       content: "";
       position: absolute;
@@ -460,11 +600,21 @@
     display: flex;
     align-items: center;
     margin-bottom: 30px;
+
+    @include on-mobile {
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 10px;
+    }
   }
 
   &__label {
     &:not(:last-child) {
       margin-right: 25px;
+
+      @include on-mobile {
+        margin-right: 10px;
+      }
     }
   }
 
@@ -483,6 +633,13 @@
     line-height: 28px;
     color: $default-black;
     margin-right: 55px;
+
+    @include on-mobile {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-right: 0;
+    }
   }
 
   &__checkbox {
@@ -494,6 +651,10 @@
   &__input-box {
     display: flex;
     margin-bottom: 30px;
+
+    @include on-mobile-s {
+      flex-wrap: wrap;
+    }
   }
 
   &__input-text {
@@ -506,6 +667,11 @@
 
     &:not(:last-child) {
       margin-right: 30px;
+
+      @include on-mobile-s {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -518,24 +684,40 @@
     margin-bottom: 40px;
     padding: 20px;
     resize: vertical;
+
+    @include on-mobile {
+      margin-bottom: 20px;
+    }
   }
 }
 
 .related {
   margin-bottom: 120px;
 
+  @include on-desktop {
+    margin-bottom: 80px;
+  }
+
+  @include on-mobile {
+    margin-bottom: 60px;
+  }
+
   &__title {
     margin-bottom: 55px;
     text-align: center;
+
+    @include on-mobile {
+      margin-bottom: 30px;
+    }
   }
 
   &__list {
     display: flex;
-  }
+    gap: 30px;
 
-  &__item {
-    &:not(:last-child) {
-      margin-right: 30px;
+    @include on-tablet {
+      flex-wrap: wrap;
+      justify-content: space-evenly;
     }
   }
 

@@ -1,15 +1,29 @@
-.blog-page {
+.blog-one {
   padding: 120px 0;
+
+  @include on-desktop {
+    padding: 80px 0;
+  }
 
   &__inner {
     display: flex;
     justify-content: space-between;
+
+    @include on-desktop {
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 
   &__content {
     max-width: 770px;
     width: 100%;
     margin-right: 30px;
+
+    @include on-desktop {
+      margin-right: 0;
+      max-width: 100%;
+    }
   }
 
   &__img {
@@ -17,17 +31,42 @@
     height: 450px;
     display: block;
     object-fit: cover;
+
+    @include on-desktop {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    @include on-mobile {
+      object-fit: contain;
+      height: fit-content;
+    }
   }
 
   &__aside {
     max-width: 370px;
     width: 100%;
-  }
-}
 
-.blog-one {
-  &__img {
-    margin-bottom: 30px;
+    @include on-desktop {
+      order: -1;
+      min-width: 100%;
+
+      @include page-grid;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 60px;
+
+      @include on-desktop {
+        margin-bottom: 40px;
+      }
+
+      @include on-mobile {
+        margin-bottom: 30px;
+      }
+    }
   }
 
   &__inner-top {
@@ -37,6 +76,14 @@
     border-top: none;
     margin-top: -1px;
 
+    @include on-desktop {
+      overflow: hidden;
+    }
+
+    @include on-tablet {
+      padding: 0 20px;
+    }
+
     h3 {
       font-family: "Roboto", sans-serif;
       font-weight: 500;
@@ -44,10 +91,23 @@
       line-height: 1;
       color: $default-black;
       margin-bottom: 25px;
+
+      @include on-mobile {
+        font-size: 20px;
+        line-height: inherit;
+      }
+
+      @include on-mobile-s {
+        margin-bottom: 20px;
+      }
     }
 
     p {
       margin: 30px 0;
+
+      @include on-mobile-s {
+        margin: 20px 0;
+      }
     }
 
     blockquote {
@@ -59,12 +119,30 @@
       padding: 39px;
       background-color: $bg;
       border-left: 3px solid $accent-color;
+
+      @include on-tablet {
+        padding: 25px;
+      }
+
+      @include on-mobile-s {
+        padding: 15px;
+      }
     }
   }
 
   &__info {
     display: flex;
     margin-bottom: 25px;
+    padding-top: 30px;
+
+    @include on-mobile {
+      flex-wrap: wrap;
+    }
+
+    @include on-mobile-s {
+      margin-bottom: 20px;
+      padding-top: 10px;
+    }
   }
 
   &__info-item {
@@ -106,12 +184,13 @@
     margin-right: 30px;
     float: left;
     object-fit: cover;
-  }
+    max-width: 340px;
+    width: 100%;
 
-  &__img-right {
-    margin-left: 30px;
-    float: right;
-    object-fit: cover;
+    @include on-tablet {
+      margin-right: 20px;
+      margin-bottom: 10px;
+    }
   }
 
   &__bottom-subtitle {
@@ -127,11 +206,74 @@
     margin-bottom: 40px;
     padding-bottom: 40px;
     border-bottom: 1px solid $border;
+
+    @include on-mobile {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+    }
   }
 
   &__comments {
     &:not(:last-child) {
       margin-bottom: 25px;
+
+      @include on-mobile {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__search {
+    @include on-desktop {
+      grid-column: span 12;
+    }
+
+    @include on-tablet {
+      grid-column: span 6;
+    }
+
+    @include on-mobile {
+      grid-column: span 2;
+    }
+  }
+
+  &__person {
+    @include on-desktop {
+      grid-column: 1 / 4;
+    }
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-mobile {
+      grid-column: span 2;
+    }
+  }
+
+  &__post {
+    @include on-desktop {
+      grid-column: 4 / 12;
+    }
+
+    @include on-tablet {
+      grid-column: 4 / 7;
+    }
+
+    @include on-mobile {
+      grid-column: span 2;
+    }
+  }
+
+  &__filter-category {
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__filter-tags {
+    @include on-desktop {
+      display: none;
     }
   }
 }
@@ -139,11 +281,20 @@
 .blog-author {
   padding: 0 30px;
 
+  @include on-mobile-s {
+    padding: 0 10px;
+  }
+
   &__social {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 35px;
+
+    @include on-mobile-s {
+      gap: 10px;
+      flex-wrap: wrap;
+    }
   }
 
   &__tags {
@@ -169,6 +320,12 @@
     margin-bottom: 40px;
     padding-bottom: 40px;
     border-bottom: 1px solid $border;
+
+    @include on-mobile {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      flex-direction: column;
+    }
   }
 
   &__author-img {
@@ -176,6 +333,11 @@
     height: 140px;
     object-fit: cover;
     margin-right: 30px;
+
+    @include on-mobile {
+      margin: 0;
+      margin-bottom: 20px;
+    }
   }
 
   &__cite {
@@ -186,9 +348,15 @@
     margin-bottom: 25px;
     font-style: normal;
     display: block;
-  }
 
-  &__text {
+    @include on-mobile {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    @include on-mobile-s {
+      margin-bottom: 10px;
+    }
   }
 }
 

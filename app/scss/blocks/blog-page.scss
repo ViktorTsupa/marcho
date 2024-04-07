@@ -1,15 +1,28 @@
 .blog-page {
   padding: 120px 0;
 
+  @include on-desktop {
+    padding: 80px 0;
+  }
+
   &__inner {
     display: flex;
     justify-content: space-between;
+
+    @include on-desktop {
+      flex-direction: column;
+    }
   }
 
   &__content {
     max-width: 770px;
     width: 100%;
     margin-right: 30px;
+
+    @include on-desktop {
+      margin-right: 0;
+      min-width: 100%;
+    }
   }
 
   &__item {
@@ -17,6 +30,14 @@
 
     &:not(:last-child) {
       margin-bottom: 60px;
+
+      @include on-desktop {
+        margin-bottom: 40px;
+      }
+
+      @include on-mobile {
+        margin-bottom: 30px;
+      }
     }
 
     &:hover {
@@ -26,6 +47,10 @@
     &--slider .slick-slider {
       height: 450px;
       overflow: hidden;
+
+      @include on-mobile {
+        height: fit-content;
+      }
     }
   }
 
@@ -47,21 +72,40 @@
         background-repeat: no-repeat;
         width: 114px;
         height: 114px;
+
+        @include on-mobile {
+          width: 70px;
+          height: 70px;
+        }
       }
     }
   }
 
   &__img {
     max-width: 770px;
+    width: 100%;
     height: 450px;
     display: block;
     object-fit: cover;
+
+    @include on-desktop {
+      min-width: 100%;
+    }
+
+    @include on-mobile {
+      object-fit: contain;
+      height: fit-content;
+    }
   }
 
   &__item-box {
     padding: 40px;
     border: 1px solid $border;
     transition: border-color 0.3s;
+
+    @include on-mobile {
+      padding: 20px;
+    }
 
     &:hover {
       border-color: transparent;
@@ -81,6 +125,10 @@
     color: $default-black;
     transition: color 0.3s;
 
+    @include on-mobile {
+      font-size: 20px;
+    }
+
     &:hover {
       color: $accent-color;
     }
@@ -92,6 +140,73 @@
 
   &__aside {
     max-width: 370px;
+    width: 100%;
+
+    @include on-desktop {
+      order: -1;
+      min-width: 100%;
+
+      @include page-grid;
+    }
+  }
+
+  &__search {
+    @include on-desktop {
+      grid-column: span 12;
+    }
+
+    @include on-tablet {
+      grid-column: span 6;
+    }
+
+    @include on-mobile {
+      grid-column: span 2;
+    }
+  }
+
+  &__person {
+    @include on-desktop {
+      grid-column: 1 / 4;
+    }
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-mobile {
+      grid-column: span 2;
+    }
+  }
+
+  &__post {
+    @include on-desktop {
+      grid-column: 4 / 12;
+    }
+
+    @include on-tablet {
+      grid-column: 4 / 7;
+    }
+
+    @include on-mobile {
+      grid-column: span 2;
+    }
+  }
+
+  &__filter-category {
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__filter-tags {
+    @include on-desktop {
+      display: none;
+    }
+  }
+}
+
+.slick-slider {
+  @include on-desktop {
     width: 100%;
   }
 }
@@ -116,6 +231,11 @@
   path {
     fill: $white-color;
   }
+
+  @include on-mobile-s {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .slick-disabled {
@@ -129,10 +249,18 @@
 
 .slick-prev {
   left: 40px;
+
+  @include on-mobile-s {
+    left: 10px;
+  }
 }
 
 .slick-next {
   right: 40px;
+
+  @include on-mobile-s {
+    right: 10px;
+  }
 }
 
 .person {

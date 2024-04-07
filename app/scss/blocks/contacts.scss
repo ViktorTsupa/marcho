@@ -2,19 +2,41 @@
   height: 450px;
   width: 100%;
   margin-bottom: 120px;
+
+  @include on-desktop {
+    margin-bottom: 50px;
+  }
 }
 
 .contacts {
   padding: 120px 0;
 
+  @include on-desktop {
+    padding: 80px 0;
+  }
+
+  @include on-mobile {
+    padding: 60px 0;
+  }
+
   &__inner {
     display: flex;
+
+    @include on-desktop {
+      flex-direction: column;
+    }
   }
 
   &__info {
     margin-right: 30px;
     max-width: 370px;
     width: 100%;
+
+    @include on-desktop {
+      max-width: 100%;
+      margin: 0;
+      margin-bottom: 50px;
+    }
   }
 
   &__title {
@@ -23,11 +45,20 @@
     color: $default-black;
     line-height: 58px;
     font-size: 48px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+
+    @include on-mobile {
+      font-size: 28px;
+      line-height: 38px;
+    }
   }
 
   &__text {
     margin-bottom: 60px;
+
+    @include on-mobile {
+      margin-bottom: 40px;
+    }
   }
 
   &__item {
@@ -36,6 +67,10 @@
 
     &:not(:last-child) {
       margin-bottom: 55px;
+
+      @include on-desktop {
+        margin-bottom: 40px;
+      }
     }
 
     &::before {
@@ -83,6 +118,15 @@
     max-width: 770px;
     width: 100%;
     box-shadow: 0px 10px 40px 0px rgba(172, 172, 172, 0.3);
+
+    @include on-desktop {
+      max-width: 100%;
+      padding: 40px 20px;
+    }
+
+    @include on-mobile {
+      padding: 20px;
+    }
   }
 
   &__form-title {
@@ -97,6 +141,11 @@
   &__input-box {
     display: flex;
     margin-bottom: 30px;
+
+    @include on-mobile {
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
   }
 
   &__input {
@@ -105,10 +154,20 @@
     display: block;
     height: 50px;
     width: 100%;
+
+    @include on-mobile {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
   }
 
   &__input-name {
     margin-right: 30px;
+
+    @include on-mobile {
+      margin: 0;
+    }
   }
 
   &__input-subject {
@@ -129,5 +188,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include on-mobile-s {
+      width: 100%;
+    }
   }
 }

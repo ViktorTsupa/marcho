@@ -1,8 +1,10 @@
-@import "../mixin";
-
 .footer {
   padding: 75px 0 25px;
   background-color: $bg;
+
+  @include on-mobile {
+    padding: 40px 0 25px;
+  }
 
   &__top {
     border-bottom: 1px solid $border;
@@ -14,6 +16,14 @@
 
   &__contact {
     grid-column: 1 / 4;
+
+    @include on-tablet {
+      grid-column: 1 / 2;
+    }
+
+    @include on-mobile {
+      grid-column: 1;
+    }
   }
 
   &__contact-link {
@@ -28,6 +38,10 @@
 
   &__phone {
     margin-bottom: 30px;
+
+    @include on-mobile {
+      margin-bottom: 20px;
+    }
   }
 
   &__item {
@@ -40,6 +54,44 @@
     font-size: 22px;
     color: $default-black;
     margin-bottom: 30px;
+
+    @include on-mobile {
+      margin-bottom: 20px;
+    }
+
+    &-slide {
+      pointer-events: none;
+
+      @include on-mobile {
+        display: flex;
+        align-items: center;
+        pointer-events: all;
+
+        &::after {
+          content: "";
+          display: block;
+          width: 40px;
+          height: 40px;
+          background-color: transparent;
+          background-image: url(../../img/icons/square-caret-down.svg);
+          background-repeat: no-repeat;
+          background-position: center;
+          padding-left: 50px;
+        }
+
+        &.active::after {
+          content: "";
+          display: block;
+          width: 40px;
+          height: 40px;
+          background-color: transparent;
+          background-image: url(../../img/icons/square-caret-up.svg);
+          background-repeat: no-repeat;
+          background-position: center;
+          padding-left: 50px;
+        }
+      }
+    }
   }
 
   &__logo {
@@ -54,18 +106,61 @@
 
   &__links {
     grid-column: 4 / 6;
+
+    @include on-desktop {
+      grid-column: 4 / 8;
+    }
+
+    @include on-tablet {
+      grid-column: 2 / 4;
+    }
+
+    @include on-mobile {
+      grid-column: span 2;
+    }
   }
 
   &__account {
     grid-column: 6 / 8;
+
+    @include on-desktop {
+      grid-column: 8 / 13;
+    }
+
+    @include on-tablet {
+      grid-column: 4 / 7;
+    }
+
+    @include on-mobile {
+      grid-column: span 2;
+    }
   }
 
   &__subscribe {
+    max-width: 470px;
     grid-column: 8 / 13;
+
+    @include on-desktop {
+      grid-column: 1 / 8;
+    }
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-mobile {
+      grid-column: span 2;
+    }
   }
 
   &__text {
     margin-bottom: 30px;
+  }
+
+  &__form {
+    @include on-mobile {
+      @include page-grid;
+    }
   }
 
   &__input {
@@ -79,23 +174,48 @@
       color: $default-grey;
       font-size: 16px;
     }
+
+    @include on-mobile {
+      max-width: 100%;
+      grid-column: span 2;
+    }
+  }
+
+  &__btn {
+    @include on-mobile {
+      grid-column: span 2;
+    }
   }
 
   &__bottom {
     font-size: 12px;
     line-height: 34px;
 
-    @include page-grid;
+    display: flex;
+    justify-content: space-between;
+
+    @include on-mobile {
+      @include page-grid;
+    }
   }
 
   &__bottom-text {
-    grid-column: 1 / 5;
+    @include on-mobile {
+      text-align: center;
+      grid-column: span 2;
+    }
   }
 
   &__payments {
-    grid-column: 10 / 13;
     display: flex;
+    justify-content: end;
     align-items: center;
+
+    @include on-mobile {
+      grid-column: span 2;
+      justify-content: center;
+      order: -1;
+    }
   }
 
   &__span {

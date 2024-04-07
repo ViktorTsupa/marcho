@@ -22,6 +22,9 @@
           >
         </a>
         <nav class="header__menu">
+          <button type="button" class="header__btn">
+            <span class="header__btn-span"></span>
+          </button>
           <ul class="header__list">
             <li class="header__item">
               <a class="header__link header__link--active" href="#">HOME</a>
@@ -94,7 +97,7 @@
                 <a class="contacts__link" href="tel:+01234567896">+0-123-456-7896</a>
               </li>
               <li class="contacts__item contacts__item--location">
-                <a class="contacts__link" 
+                <a class="contacts__link"
                   href="https://maps.app.goo.gl/SMHsurVLYGSwx5Vf8"
                   target="_blank">
                   Ranlon Market 789 Road,<br>
@@ -113,10 +116,19 @@
               Contact Form
             </h4>
           <div class="contacts__input-box">
-            <input type="text" class="contacts__input contacts__input-name" placeholder="Your Name">
-            <input type="email" class="contacts__input contacts__input-mail" placeholder="Your E-mail Address">
+            <input class="contacts__input contacts__input-name" 
+              type="text" 
+              placeholder="Your Name"
+            >
+            <input class="contacts__input contacts__input-mail" 
+              type="email"
+              placeholder="Your E-mail Address"
+            >
           </div>
-          <input type="text" class="contacts__input contacts__input-subject" placeholder="Subject">
+          <input class="contacts__input contacts__input-subject" 
+            type="text" 
+            placeholder="Subject"
+          >
           <textarea class="contacts__input contacts__textarea" placeholder="Message here"></textarea>
           <button class="button contacts__form-btn" type="submit">SEND MESSAGE</button>
           </form>
@@ -197,7 +209,7 @@
           </div>
 
           <div class="footer__links">
-            <h3 class="footer__title">Useful Links</h3>
+            <h3 class="footer__title footer__title-slide">Useful Links</h3>
             <ul class="footer__list">
               <li class="footer__item">
                 <a class="footer__link" href="#">About Us</a>
@@ -218,7 +230,7 @@
           </div>
 
           <div class="footer__account">
-            <h3 class="footer__title">My Account</h3>
+            <h3 class="footer__title footer__title-slide">My Account</h3>
             <ul class="footer__list">
               <li class="footer__item">
                 <a class="footer__link" href="#">My Account</a>

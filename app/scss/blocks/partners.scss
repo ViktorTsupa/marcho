@@ -1,0 +1,19 @@
+.partners {
+  margin-bottom: 115px;
+
+  @include on-mobile {
+    margin-bottom: 80px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include on-mobile {
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  }
+}
